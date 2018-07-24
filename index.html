@@ -20,12 +20,12 @@
             <button type="button" value = "8" @click = "result = result + $event.target.value">8</button>
             <button type="button" value = "9" @click = "result = result + $event.target.value">9</button>
             <button type="button" value = "0" @click = "result = result + $event.target.value">0</button>
-            <button type="button" value = "+" @click = "result = result + $event.target.value">+</button>
-            <button type="button" value = "-" @click = "result = result + $event.target.value">-</button>
-            <button type="button" value = "*" @click = "result = result + $event.target.value">*</button>
-            <button type="button" value = "/" @click = "result = result + $event.target.value">/</button>
-            <button type="button" >=</button>
-            <button type="button" @click=" result='' ">Сброс</button>
+            <button type="button" value = "+" @click = "getOp($event)">+</button>
+            <button type="button" value = "-" @click = "getOp($event)">-</button>
+            <button type="button" value = "*" @click = "getOp($event)">*</button>
+            <button type="button" value = "/" @click = "getOp($event)">/</button>
+            <button type="button" @click = "getTotalValue">=</button>
+            <button type="button" @click="result=''">Сброс</button>
         </div>
     </div>
     <script>
@@ -33,8 +33,35 @@
             el: '.calc',
             data: {
                 result: "",
+                value: 0,
+                key: 0
             },
-       
+            methods: {
+                getOp(evt) {
+                    this.value=this.result;
+                    this.result='';
+                    this.key=evt.target.value;
+                    console.log(this.key);
+                },
+
+                getTotalValue() {
+                    if (this.key==='+') {
+                        this.result=+this.value+ +this.result;
+                    }
+
+                    if (this.key==='-') {
+                        this.result=+this.value- +this.result;
+                    }
+                    if (this.key==='*') {
+                        this.result=+this.value* +this.result;
+                    }
+
+                    if (this.key==='/') {
+                        this.result=+this.value / +this.result;
+                    }
+                    
+                }
+            }
             });
     </script>
 </body>
