@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="calc">
+        <p class="screen">Итог {{ result }}</p>
+            <button type="button" value = "1" @click = "result = result + $event.target.value">1</button>
+            <button type="button" value = "2" @click = "result = result + $event.target.value">2</button>
+            <button type="button" value = "3" @click = "result = result + $event.target.value">3</button>
+            <button type="button" value = "4" @click = "result = result + $event.target.value">4</button>
+            <button type="button" value = "5" @click = "result = result + $event.target.value">5</button>
+            <button type="button" value = "6" @click = "result = result + $event.target.value">6</button>
+            <button type="button" value = "7" @click = "result = result + $event.target.value">7</button>
+            <button type="button" value = "8" @click = "result = result + $event.target.value">8</button>
+            <button type="button" value = "9" @click = "result = result + $event.target.value">9</button>
+            <button type="button" value = "0" @click = "result = result + $event.target.value">0</button>
+            <button type="button" value = "+" @click = "result = result + $event.target.value">+</button>
+            <button type="button" value = "-" @click = "result = result + $event.target.value">-</button>
+            <button type="button" value = "*" @click = "result = result + $event.target.value">*</button>
+            <button type="button" value = "/" @click = "result = result + $event.target.value">/</button>
+            <button type="button" >=</button>
+            <button type="button" @click=" result='' ">Сброс</button>
+        </div>
+    </div>
+    <script>
+        let sample = new Vue({
+            el: '.calc',
+            data: {
+                result: "",
+            },
+       
+            });
+    </script>
+</body>
+</html>

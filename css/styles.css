@@ -1,0 +1,27 @@
+.wrapper{
+	padding: 15px;
+	max-width: 900px;
+}
+
+.calc {
+	width: 200px;
+	background: skyblue;
+	border: 1px solid blue;
+	border-radius: 10px;
+}
+
+button {
+	width: 20%;
+	margin: 10px;
+}
+
+button:last-child {
+	width: 90%;
+}
+
+p {
+	width: 80%;
+	margin: 20px 10px;
+	padding: 5px 10px;
+	background-color: #e7e7e7;
+}
